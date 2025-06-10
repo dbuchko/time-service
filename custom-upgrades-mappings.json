@@ -1,0 +1,52 @@
+{
+  "rewriteArtifacts": [
+      {
+        "coordinates": "com.broadcom.spring-consulting.recipes:custom-spring-recipes:0.1.0",
+        "minimalJavaVersion": "17"
+      }
+   ],
+  "initRecipes": [
+  ],
+  "projects": [
+    {
+      "slug": "datasource-micrometer",
+      "coordinates": [
+        "net.ttddyy.observation"
+      ],
+      "repositoryUrl": "https://github.com/jdbc-observations/datasource-micrometer",
+      "rewrite": {
+        "1.0.x": {
+          "recipes": [
+            {
+              "name": "com.broadcom.springconsulting.timeservice.UpgradeProject2_0"
+            }
+          ],
+          "requirements": {
+            "supportedJavaVersions": {
+              "major": 21,
+              "minor": 17
+            },
+            "supportedGenerations": {
+                "spring-modulith": "1.3.x"
+            }
+          },
+          "nextRewrite": "1.4.x"
+        },
+        "1.4.x": {
+          "recipes": [],
+          "requirements": {
+            "supportedJavaVersions": {
+              "major": 21,
+              "minor": 17
+            },
+            "supportedGenerations": {
+              "spring-modulith": "1.4.x"
+            }
+          },
+          "nextRewrite": null
+        }
+      }
+    }
+  ]
+}
+
